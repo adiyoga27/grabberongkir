@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Helpers;
-trait JsonResponseTrait
+trait helper
 {
     protected $status_code;
 
