@@ -1,6 +1,5 @@
 <?php
 namespace App\Http\Controllers\Api;
-use App\Helpers\JsonResponseTrait;
 use App\Http\Controllers\Controller;
 use App\Models\City;
 use App\Models\Cost;
@@ -10,12 +9,14 @@ use App\Models\Courier;
 use App\Models\Province;
 use App\Models\Service;
 use App\Models\Subdistrict;
+use App\Traits\JsonResponseTrait;
 use Illuminate\Http\Request;
 use Steevenz\Rajaongkir;
 class GrabbingController extends Controller
 {
     use JsonResponseTrait;
     public $rajaongkir;
+    
     public function __construct() {
         $this->rajaongkir = new Rajaongkir(env('APP_RAJAONGKIR'), Rajaongkir::ACCOUNT_PRO);
     }
