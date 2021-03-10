@@ -14,6 +14,7 @@ class Province extends Model
     protected $fillable = [
         'province'
     ];
+    public $timestamps = true;
 
     public function city()
     {

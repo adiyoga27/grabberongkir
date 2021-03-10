@@ -13,10 +13,12 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        \App\Console\Commands\ProvinceCommand::class,
+        \App\Console\Commands\CityCommand::class,
     ];
 
     /**
+     * 
      * Define the application's command schedule.
      *
      * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
@@ -24,7 +26,21 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        // $schedule->command('province:fetch')
+        //     ->timezone('Asia/Jakarta')
+        //     ->everySixHours()
+        //     ->description('Fetch province data from raja ongkir API.');
+
+        //     $schedule->command('city:fetch')
+        //     ->timezone('Asia/Jakarta')
+        //     ->everySixHours()
+        //     ->description('Fetch city data from raja ongkir API.');
+
+        //     $schedule->command('subdistrict:fetch')
+        //     ->timezone('Asia/Jakarta')
+        //     ->everySixHours()
+        //     ->description('Fetch subdistrict data from raja ongkir API.');
+        
     }
 
     /**
@@ -34,6 +50,7 @@ class Kernel extends ConsoleKernel
      */
     protected function commands()
     {
+
         $this->load(__DIR__.'/Commands');
 
         require base_path('routes/console.php');
